@@ -51,9 +51,10 @@ class ANNO:
         self.dictionary["annotations"].append(self.annotation)
 
     def add_category(self):
-        self.category = {"supercategory": "vehicle", "id": 1, "name": "vehicle"}
-        self.dictionary["categories"].append(self.category)
-
+        for cls in classes:
+            cls_id = classes.index(cls) + 1
+            self.category = {"supercategory": cls, "id": cls_id, "name": cls}
+            self.dictionary["categories"].append(self.category)
 
 def convert_annotation(image_id):
     segmentations = []
