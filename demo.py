@@ -110,7 +110,6 @@ def get_area(segmentations):
     areas = []
     for i in range(len(segmentations)):
         segmentation = copy.deepcopy(segmentations[i])
-
         xarray = segmentation[::2]
         yarray = segmentation[1::2]
         length = len(xarray)
@@ -147,7 +146,6 @@ def read_json(json_name):
 
 
 image_ids = open('ls.txt').read().strip().split()
-print image_ids
 for image_id in image_ids:
     width, height, segmentations, classall = convert_annotation(image_id)
     bboxes = get_bbox(segmentations)
@@ -156,11 +154,9 @@ for image_id in image_ids:
 
 
 voc = ANNO()
-
 voc.init_index()
 voc.add_category()
 annid = 1
-
 for image_id in image_ids:
     diction = read_json('json/%s.json' % (image_id))
     annid = voc.input_data(diction, annid)
