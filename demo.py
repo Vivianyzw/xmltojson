@@ -5,7 +5,7 @@ import numpy as np
 import json
 import copy
 
-classes = ["car"]
+classes = ["vehicle"]
 
 class ANNO:
     def __init__(self):
