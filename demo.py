@@ -135,7 +135,7 @@ for image_id in image_ids:
     w, h, segment = convert_annotation(image_id)
     bbox = get_bbox(segment)
     area = get_area(segment)
-    save_json(h, w, image_id, segment, area, 1, bbox, catid, image_id, image_id)
+    save_json(h, w, image_id, segment, area, 0, bbox, catid, image_id, image_id)
 
 
 voc = ANNO()
