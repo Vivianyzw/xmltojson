@@ -112,9 +112,8 @@ def get_area(segmentations):
         segmentation = copy.deepcopy(segmentations[i])
         xarray = segmentation[::2]
         yarray = segmentation[1::2]
-        length = len(xarray)
         listall = []
-        for i in range(0, length):
+        for i in range(len(xarray)):
             ll = [[xarray[i], yarray[i]]]
             listall.append(ll)
         array_value = np.array(listall)
