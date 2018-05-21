@@ -24,7 +24,7 @@ class ANNO:
         self.category = {}
 
     def init_index(self):
-        self.dictionary = {"images": [], "annotations": [], "categories": []}
+        self.dictionary = {"images": [], "type": "instances", "annotations": [], "categories": []}
 
     def input_data(self, dict, annid):
         self.filename = str(dict["images"]["imgid"]) + ".jpg"
